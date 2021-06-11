@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Infragistics.Themes;
 using Infragistics.Windows.Ribbon;
 
@@ -14,6 +15,11 @@ namespace PrismOutlookTestApp.Views
             InitializeComponent();
 
             ThemeManager.ApplicationTheme = new Office2013Theme();
+        }
+
+        private void XamOutlookBar_OnSelectedGroupChanged(Object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
