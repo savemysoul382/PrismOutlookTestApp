@@ -1,7 +1,10 @@
-﻿using System;
-using System.Windows;
-using Infragistics.Themes;
+﻿using Infragistics.Themes;
+using Infragistics.Windows.OutlookBar;
 using Infragistics.Windows.Ribbon;
+using Prism.Regions;
+using PrismOutLook.Core;
+using System;
+using System.Windows;
 
 namespace PrismOutlookTestApp.Views
 {
@@ -10,8 +13,12 @@ namespace PrismOutlookTestApp.Views
     /// </summary>
     public partial class MainWindow : XamRibbonWindow
     {
-        public MainWindow()
+        private readonly IApplicationCommands application_commands;
+
+        public MainWindow(IApplicationCommands application_commands
+        )
         {
+            this.application_commands = application_commands;
             InitializeComponent();
 
             ThemeManager.ApplicationTheme = new Office2013Theme();
@@ -19,7 +26,12 @@ namespace PrismOutlookTestApp.Views
 
         private void XamOutlookBar_OnSelectedGroupChanged(Object sender, RoutedEventArgs e)
         {
-            
+            if (((XamOutlookBar)sender).SelectedGroup is IOutlookBarGroup @group)
+            {
+                //TODO navigate
+                //group.DefaultNavigationPath;
+                this.application_commands.NavigateCommand.Execute(group.DefaultNavigationPath);
+            }
         }
     }
 }

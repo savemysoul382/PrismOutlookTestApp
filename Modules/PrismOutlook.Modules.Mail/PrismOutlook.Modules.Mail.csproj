@@ -56,7 +56,6 @@
     <Compile Include="Menus\MailGroup.xaml.cs">
       <DependentUpon>MailGroup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +85,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\PrismOutlook.Business\PrismOutlook.Business.csproj">
+      <Project>{85f566bb-02a8-4a88-8fab-bfb96cc12a7b}</Project>
+      <Name>PrismOutlook.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\PrismOutLook.Core\PrismOutLook.Core.csproj">
       <Project>{22d3f506-1a2e-42f0-ba49-dfc50a4dfe30}</Project>
       <Name>PrismOutLook.Core</Name>

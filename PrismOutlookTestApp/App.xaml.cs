@@ -5,6 +5,7 @@ using System.Windows;
 using Infragistics.Windows.OutlookBar;
 using Infragistics.Windows.Ribbon;
 using Prism.Regions;
+using PrismOutLook.Core;
 using PrismOutLook.Modules.Contact;
 using PrismOutlook.Modules.Mail;
 using PrismOutlookTestApp.Core.Regions;
@@ -23,7 +24,7 @@ namespace PrismOutlookTestApp
 
         protected override void RegisterTypes(IContainerRegistry container_registry)
         {
-
+            container_registry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog module_catalog)

@@ -4,8 +4,8 @@ namespace PrismOutLook.Core
 {
     public static class RegionNames
     {
-        public static readonly String ContentRegion = "ContentRegion";
-        public static readonly String OutlookGroupRegion = "OutLookGroupRegion";
-        public static readonly String RibbonRegion = "RibbonRegion";
+        public const String ContentRegion = "ContentRegion";
+        public const String OutlookGroupRegion = "OutLookGroupRegion";
+        public const String RibbonRegion = "RibbonRegion";
     }
 }

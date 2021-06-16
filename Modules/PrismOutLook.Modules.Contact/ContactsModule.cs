@@ -3,6 +3,8 @@ using Prism.Modularity;
 using Prism.Regions;
 using PrismOutLook.Core;
 using PrismOutLook.Modules.Contact.Menus;
+using PrismOutLook.Modules.Contact.ViewModels;
+using PrismOutLook.Modules.Contact.Views;
 
 namespace PrismOutLook.Modules.Contact
 {
@@ -21,7 +23,7 @@ namespace PrismOutLook.Modules.Contact
 
         public void RegisterTypes(IContainerRegistry container_registry)
         {
-            
+            container_registry.RegisterForNavigation<ViewA, ViewAViewModel>();
         }
     }
 }

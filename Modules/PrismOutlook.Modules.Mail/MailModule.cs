@@ -21,13 +21,13 @@ namespace PrismOutlook.Modules.Mail
 
         public void OnInitialized(IContainerProvider container_provider)
         {
-            this.region_manager.RegisterViewWithRegion(regionName: RegionNames.RibbonRegion, viewType: typeof(HomeTab));
             this.region_manager.RegisterViewWithRegion(regionName: RegionNames.OutlookGroupRegion, viewType: typeof(MailGroup));
         }
 
         public void RegisterTypes(IContainerRegistry container_registry)
         {
             ViewModelLocationProvider.Register<MailGroup, MailGroupViewModel>();
+            container_registry.RegisterForNavigation<MailList, MailListViewModel>();
         }
     }
 }
